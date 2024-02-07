@@ -17,7 +17,7 @@
             android:layout_gravity="end"
             android:background="@android:color/transparent"
             android:contentDescription="@string/title_search"
-            android:src="@drawable/ic_cancel_24dp" />
+            android:src="@drawable/ic_cancel_black_24dp" />
 
     </androidx.appcompat.widget.Toolbar>
 
