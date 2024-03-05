@@ -1,0 +1,85 @@
+<resources>
+    <string name="app_name">hlivv</string>
+    <string name="title_home">HOME</string>
+    <string name="title_qr">QR</string>
+    <string name="title_menu">카테고리</string>
+    <string name="title_ar">AR</string>
+    <string name="title_search">검색</string>
+    <string name="title_my">My</string>
+    <string name="title_cart">CART</string>
+    <string name="cart">장바구니</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="onboarding_start">시작하기</string>
+
+    <string name="pref_category_barcode_detection">Barcode detection</string>
+    <string name="pref_key_barcode_reticle_width" translatable="false">barcode_brw</string>
+    <string name="pref_title_barcode_reticle_width">Barcode reticle width</string>
+    <string name="pref_summary_barcode_reticle_width" formatted="false">Relative to the camera view width, ranges from 50% to 95%</string>
+    <string name="pref_key_barcode_reticle_height" translatable="false">barcode_brh</string>
+    <string name="pref_title_barcode_reticle_height">Barcode reticle height</string>
+    <string name="pref_summary_barcode_reticle_height" formatted="false">Relative to the camera view height, ranges from 20% to 80%</string>
+    <string name="pref_key_enable_barcode_size_check" translatable="false">barcode_ebsc</string>
+    <string name="pref_title_enable_barcode_size_check">Enable barcode size check</string>
+    <string name="pref_summary_enable_barcode_size_check">Will prompt user to move camera closer if the detected barcode is too small</string>
+    <string name="pref_key_minimum_barcode_width" translatable="false">barcode_mbw</string>
+    <string name="pref_title_minimum_barcode_width">Minimum barcode width</string>
+    <string name="pref_summary_minimum_barcode_width" formatted="false">Relative to the reticle width, ranges from 20% to 80% (only applicable when barcode size check enabled)</string>
+    <string name="pref_key_delay_loading_barcode_result" translatable="false">barcode_dlbr</string>
+    <string name="pref_title_delay_loading_barcode_result">Delay loading barcode result</string>
+    <string name="pref_summary_delay_loading_barcode_result">Will show the loading spinner for 2s</string>
+    <string name="pref_key_token">pref_key_token</string>
+
+    <string name="cd_settings_button">Settings</string>
+    <string name="cd_close_button">Back</string>
+    <string name="cd_flash_button">Toggle camera flash</string>
+
+    <string name="pref_key_rear_camera_preview_size" translatable="false">rcpvs</string>
+    <string name="pref_key_rear_camera_picture_size" translatable="false">rcpts</string>
+
+    <string name="prompt_point_at_a_barcode">Point your camera at a barcode</string>
+    <string name="prompt_move_camera_closer">Move closer to search</string>
+    <string name="prompt_searching">Searching&#8230;</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">로그인</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="client_error">"Client Error"</string>
+    <string name="server_error">"Server Error"</string>
+    <string name="minus">-</string>
+    <string name="default_qty">1</string>
+    <string name="plus">+</string>
+    <string name="qty_title">주문수량</string>
+    <string name="app_title">H.Livv</string>
+    <string name="mobile_service_desc">모바일 서비스 소개</string>
+    <string name="qr_desc_title">QR서비스</string>
+    <string name="qr_desc">QR 촬영기능을 활용하여\n 온라인 상품과 오프라인 상품 모두\n 손쉽게 모바일 서비스로 이용해보세요.</string>
+    <string name="go_qr">QR서비스 바로가기</string>
+    <string name="ar_desc_title">AR서비스</string>
+    <string name="ar_desc">AR 서비스를 활용하여\n 원하는 가구를 원하는 위치로 배치해보고\n 본인만의 인테리어를 만들어보세요.</string>
+    <string name="go_ar">AR서비스 바로가기</string>
+    <string name="ko_kr">원</string>
+    <string name="total">총</string>
+    <string name="total_check">모두 선택</string>
+    <string name="check_delete">선택 삭제</string>
+    <string name="alert_cart">장바구니에 담았습니다.</string>
+    <string name="move_cart">장바구니로 가기</string>
+    <string name="cancel">취소</string>
+    <string name="payment_cash">결제금액</string>
+    <string name="total_product_payment">총 상품 금액</string>
+    <string name="discount_product_payment">총 할인 금액</string>
+    <string name="delivery_product_payment">총 배송비</string>
+    <string name="zero">0</string>
+    <string name="final_payment">최종 결제 금액</string>
+    <string name="product_count_to_payment">개 상품 구매하기</string>
+    <string name="cart_to_ar">장바구니 상품 AR 배치하기</string>
+    <string name="alert">alert</string>
+    <string name="check_yes">확인</string>
+    <string name="title_username">이메일</string>
+    <string name="title_password">비밀번호</string>
+</resources>

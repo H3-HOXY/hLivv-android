@@ -1,0 +1,47 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="bottom_prompt_chip_text_size">14sp</dimen>
+    <dimen name="bottom_prompt_chip_margin_bottom">28dp</dimen>
+    <dimen name="bottom_prompt_chip_corner_radius">8dp</dimen>
+    <dimen name="search_progress_bar_size">48dp</dimen>
+    <!--바텀시트-->
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="bottom_sheet_title_margin">16dp</dimen>
+    <dimen name="bottom_sheet_title_size">16sp</dimen>
+    <dimen name="bounding_box_confirmed_stroke_width">2dp</dimen>
+    <dimen name="bounding_box_corner_radius">12dp</dimen>
+    <dimen name="object_thumbnail_height">120dp</dimen>
+    <dimen name="object_thumbnail_margin">24dp</dimen>
+    <dimen name="object_thumbnail_stroke_width">@dimen/bounding_box_confirmed_stroke_width</dimen>
+    <!--카메라-->
+    <dimen name="top_action_bar_padding_horizontal">8dp</dimen>
+    <dimen name="top_action_bar_height">64dp</dimen>
+    <dimen name="top_action_button_padding">12dp</dimen>
+    <!--바코드-->
+    <dimen name="barcode_bottom_sheet_padding_vertical">12dp</dimen>
+    <dimen name="barcode_reticle_ripple_stroke_width">4dp</dimen>
+    <dimen name="barcode_reticle_ripple_size_offset">40dp</dimen>
+    <dimen name="barcode_reticle_stroke_width">4dp</dimen>
+    <dimen name="barcode_reticle_corner_radius">8dp</dimen>
+    <dimen name="barcode_field_padding_horizontal">24dp</dimen>
+    <dimen name="barcode_field_padding_vertical">12dp</dimen>
+    <dimen name="barcode_field_value_size">16sp</dimen>
+    <dimen name="barcode_field_value_padding">16dp</dimen>
+    <dimen name="barcode_field_label_size">12sp</dimen>
+    <dimen name="barcode_field_label_padding">4dp</dimen>
+
+    <!--제품 상세-->
+    <dimen name="product_item_padding">16dp</dimen>
+    <dimen name="product_item_top_padding">12dp</dimen>
+    <dimen name="product_item_image_size">130dp</dimen>
+    <dimen name="cart_item_image_size">100dp</dimen>
+    <dimen name="product_item_image_margin_end">16dp</dimen>
+    <dimen name="product_item_title_size">18sp</dimen>
+    <dimen name="product_item_subtitle_size">13sp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="fragment_horizontal_margin">16dp</dimen>
+    <dimen name="fragment_vertical_margin">16dp</dimen>
+</resources>

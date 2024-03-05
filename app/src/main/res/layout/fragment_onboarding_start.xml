@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/hlivv_background"
+    android:paddingLeft="@dimen/fragment_horizontal_margin"
+    android:paddingTop="@dimen/fragment_vertical_margin"
+    android:paddingRight="@dimen/fragment_horizontal_margin"
+    android:paddingBottom="@dimen/fragment_vertical_margin">
+
+    <ImageView
+        android:id="@+id/hlivv_logo"
+        android:layout_width="221dp"
+        android:layout_height="221dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/hlivv_logo_color_v1" />
+
+    <TextView
+        android:id="@+id/hlivv_logo_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hlivv_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/nanumsquare_aceb"
+        android:text="@string/app_title"
+        android:textSize="40sp" />
+
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hlivv_logo_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/login_button_background"
+        android:fontFamily="@font/nanumsquare_acb"
+        android:text="@string/onboarding_start"
+        android:textSize="20sp" />
+</RelativeLayout>
