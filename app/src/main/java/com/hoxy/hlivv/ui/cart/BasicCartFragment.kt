@@ -168,6 +168,16 @@ class BasicCartFragment : Fragment(), OnSelectedItemsChanged {
                 showErrorDialog("잠시 후 다시 시도해주세요.", requireContext())
             }
         }
+
+        // 전체 선택 체크박스에 대한 리스너를 설정
+        binding.totalCheck.setOnClickListener {
+            val isChecked = binding.totalCheck.isChecked
+            cartAdapter.selectAllItems(isChecked)
+        }
+
+        binding.deleteList.setOnClickListener{
+            cartAdapter.deleteCartList()
+        }
     }
 
     private fun setupRecyclerView(cartList: MutableList<CartDto>) {
@@ -178,11 +188,7 @@ class BasicCartFragment : Fragment(), OnSelectedItemsChanged {
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = cartAdapter
 
-        // 전체 선택 체크박스에 대한 리스너를 설정
-        binding.totalCheck.setOnClickListener {
-            val isChecked = binding.totalCheck.isChecked
-            cartAdapter.selectAllItems(isChecked)
-        }
+
     }
 
     override fun onDestroyView() {
@@ -224,7 +230,7 @@ class BasicCartFragment : Fragment(), OnSelectedItemsChanged {
                     viewModel.setNumberOfProductTypes(count)
                 }
             } catch (e: Exception) {
-                // 예외 처리를 수행합니다.
+                // 예외 처리를 수행
             }
         }
     }

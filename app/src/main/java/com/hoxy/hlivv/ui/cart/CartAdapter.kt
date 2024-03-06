@@ -36,6 +36,7 @@ class CartAdapter(
 
     var isAllSelected = false
     private val selectedItems = mutableListOf<Long>()
+    private val cartControllerApi = CartControllerApi()
 
     inner class CartViewHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
@@ -52,7 +53,6 @@ class CartAdapter(
         private val deleteButton: ImageView = itemView.findViewById(R.id.cart_delete_btn)
         private val imageSize: Int =
             itemView.resources.getDimensionPixelOffset(R.dimen.cart_item_image_size)
-        private val cartControllerApi = CartControllerApi()
 
 
         fun bindCartProduct(cartDto: CartDto) {
@@ -136,7 +136,6 @@ class CartAdapter(
                                 qtyView.text = quantity.toString()
                                 CoroutineScope(Dispatchers.IO).launch {
                                     try {
-                                        //val cartControllerApi= CartControllerApi()
                                         val cartDto: CartDto = cartControllerApi.updateCart(
                                             cartProduct.productId,
                                             quantity!!.toInt()
@@ -224,6 +223,16 @@ class CartAdapter(
         holder.bindCartProduct(cartList[position])
     }
 
+    override fun onBindViewHolder(holder: CartViewHolder, position: Int, payloads: List<Any>) {
+        if (payloads.isNotEmpty() && payloads[0] is Payload) {
+            val isChecked = (payloads[0] as Payload).isChecked
+            holder.checkBox.isChecked = isChecked
+        } else {
+            super.onBindViewHolder(holder, position, payloads)
+        }
+    }
+
+
 
     fun selectAllItems(isChecked: Boolean) {
         isAllSelected = isChecked
@@ -231,7 +240,9 @@ class CartAdapter(
         if (isChecked) {
             selectedItems.addAll(cartList.map { it.productId!! })
         }
-        notifyDataSetChanged()
+        for (position in 0 until itemCount) {
+            notifyItemChanged(position, Payload(isChecked))
+        }
         callback.onSelectedItemsChanged(selectedItems)
 
 
@@ -244,5 +255,35 @@ class CartAdapter(
 
     override fun getItemCount(): Int =
         cartList.size
+
+    fun deleteCartList() {
+        val deletedItems = mutableListOf<CartDto>()
+
+        for (productId in selectedItems) {
+            val position = cartList.indexOfFirst { it.productId == productId }
+            if (position != -1) {
+                // 선택된 아이템을 삭제하고 삭제된 아이템 리스트에 추가
+                val deletedItem = cartList.removeAt(position)
+                deletedItems.add(deletedItem)
+                notifyItemRemoved(position)
+            }
+        }
+
+        // 삭제된 아이템들 서버에서 삭제
+        for (deletedItem in deletedItems) {
+            CoroutineScope(Dispatchers.IO).launch {
+                try{
+                    cartControllerApi.deleteFromCart(deletedItem.productId!!)
+                } catch (e:Exception){
+                    Log.d("CartViewHolder","ERROR!",e)
+                }
+
+            }
+        }
+
+        // 선택된 아이템 목록 초기화
+        selectedItems.clear()
+        callback.onSelectedItemsChanged(selectedItems)
+    }
 
 }

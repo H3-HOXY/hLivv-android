@@ -23,7 +23,7 @@
         android:layout_below="@id/button_down"
         android:layout_marginTop="13dp"
         android:layout_marginBottom="13dp"
-        android:fontFamily="@font/nanumsquare_aceb"
+        android:fontFamily="@font/nanumsquare_acb"
         android:text="@string/payment_cash"
         android:textColor="@color/title_color"
         android:textSize="16sp" />

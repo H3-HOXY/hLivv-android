@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="24dp"
+    android:layout_marginEnd="24dp">
+
+    <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--        android:id="@+id/toolbar"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="?attr/actionBarSize"-->
+    <!--        android:background="@android:color/transparent"-->
+    <!--        app:contentInsetStart="0dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/hlivv_logo"-->
+    <!--            android:layout_width="24dp"-->
+    <!--            android:layout_height="24dp"-->
+    <!--            android:layout_gravity="start"-->
+    <!--            android:background="@android:color/transparent"-->
+    <!--            android:contentDescription="@string/app_title"-->
+    <!--            android:paddingBottom="2dp"-->
+    <!--            android:src="@drawable/hlivv_logo_white_24dp"-->
+    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/hlivv_title"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="30dp"-->
+    <!--            android:fontFamily="@font/nanumsquare_aceb"-->
+    <!--            android:paddingStart="4dp"-->
+    <!--            android:text="@string/app_title"-->
+    <!--            android:textColor="@color/title_color"-->
+    <!--            android:textSize="23sp"-->
+    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--            app:layout_constraintStart_toEndOf="@id/hlivv_logo" />-->
+
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/login_status"-->
+    <!--            android:layout_width="75dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="end|center_horizontal"-->
+    <!--            android:background="@color/white"-->
+    <!--            android:fontFamily="@font/nanumsquare_acb"-->
+    <!--            android:paddingBottom="8dp"-->
+    <!--            android:text="@{viewmodel.loginStatus}"-->
+    <!--            android:textSize="15sp"-->
+    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent" />-->
+    <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/image_view"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginHorizontal="4dp"-->
+    <!--        android:layout_marginTop="28dp"-->
+    <!--        android:scaleType="fitXY"-->
+    <!--        android:src="@drawable/hlivv_banner"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/toolbar" />-->
+
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/mobile_desc"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="35dp"-->
+    <!--        android:fontFamily="@font/nanumsquare_aceb"-->
+    <!--        android:text="@string/mobile_service_desc"-->
+    <!--        android:textColor="@color/title_color"-->
+    <!--        android:textSize="17sp"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/image_view" />-->
+
+
+    <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--        android:id="@+id/display_qr"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="12dp"-->
+    <!--        android:paddingTop="8dp"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/mobile_desc">-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/qr_desc_title"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="8dp"-->
+    <!--            android:fontFamily="@font/nanumsquare_aceb"-->
+    <!--            android:text="@string/qr_desc_title"-->
+    <!--            android:textColor="@color/title_color"-->
+    <!--            android:textSize="17sp"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--        <androidx.constraintlayout.widget.Guideline-->
+    <!--            android:id="@+id/guideline"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:orientation="vertical"-->
+    <!--            app:layout_constraintGuide_end="164dp" />-->
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/qr_service_image"-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="0dp"-->
+    <!--            android:layout_marginTop="16dp"-->
+    <!--            android:layout_marginEnd="10dp"-->
+    <!--            android:contentDescription="@null"-->
+    <!--            android:src="@drawable/qr_service"-->
+    <!--            app:layout_constraintDimensionRatio="1:1"-->
+    <!--            app:layout_constraintEnd_toStartOf="@id/guideline"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@+id/qr_desc_title" />-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="8dp"-->
+    <!--            android:gravity="center"-->
+    <!--            android:orientation="vertical"-->
+    <!--            app:layout_constraintBottom_toBottomOf="@id/qr_service_image"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintHorizontal_bias="1.0"-->
+    <!--            app:layout_constraintStart_toEndOf="@id/guideline"-->
+    <!--            app:layout_constraintTop_toBottomOf="@id/qr_desc_title">-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/qr_desc"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:background="@drawable/desc_background"-->
+    <!--                android:backgroundTint="@color/desc_background"-->
+    <!--                android:fontFamily="@font/nanumsquare_acb"-->
+    <!--                android:lineSpacingMultiplier="1.5"-->
+    <!--                android:paddingHorizontal="16dp"-->
+    <!--                android:paddingVertical="12dp"-->
+    <!--                android:text="@string/qr_desc"-->
+    <!--                android:textColor="@color/title_color"-->
+    <!--                android:textSize="8sp"-->
+    <!--                app:layout_constraintBottom_toBottomOf="@+id/service_image"-->
+    <!--                app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                app:layout_constraintHorizontal_bias="1.0"-->
+    <!--                app:layout_constraintTop_toBottomOf="@id/qr_desc_title" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/qr_button"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginTop="13dp"-->
+    <!--                android:background="@drawable/button_background"-->
+    <!--                android:backgroundTint="@color/black"-->
+    <!--                android:fontFamily="@font/nanumsquare_aceb"-->
+    <!--                android:paddingHorizontal="26dp"-->
+    <!--                android:paddingVertical="7dp"-->
+    <!--                android:text="@string/go_qr"-->
+    <!--                android:textColor="@color/white"-->
+    <!--                android:textSize="10sp"-->
+    <!--                app:layout_constraintStart_toEndOf="@+id/service_image"-->
+    <!--                app:layout_constraintTop_toBottomOf="@+id/qr_desc" />-->
+    <!--        </LinearLayout>-->
+    <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+    <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="24dp"-->
+    <!--        android:paddingTop="8dp"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/display_qr">-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/ar_desc_title"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="8dp"-->
+    <!--            android:fontFamily="@font/nanumsquare_aceb"-->
+    <!--            android:text="@string/ar_desc_title"-->
+    <!--            android:textColor="@color/title_color"-->
+    <!--            android:textSize="17sp"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--        <androidx.constraintlayout.widget.Guideline-->
+    <!--            android:id="@+id/guideline2"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:orientation="vertical"-->
+    <!--            app:layout_constraintGuide_end="164dp" />-->
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/ar_service_image"-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="0dp"-->
+    <!--            android:layout_marginTop="16dp"-->
+    <!--            android:layout_marginEnd="10dp"-->
+    <!--            android:contentDescription="@null"-->
+    <!--            android:src="@drawable/ar_service"-->
+    <!--            app:layout_constraintDimensionRatio="1:1"-->
+    <!--            app:layout_constraintEnd_toStartOf="@id/guideline2"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@id/ar_desc_title" />-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="8dp"-->
+    <!--            android:gravity="center"-->
+    <!--            android:orientation="vertical"-->
+    <!--            app:layout_constraintBottom_toBottomOf="@id/ar_service_image"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintHorizontal_bias="1.0"-->
+    <!--            app:layout_constraintStart_toEndOf="@id/guideline2"-->
+    <!--            app:layout_constraintTop_toBottomOf="@id/ar_desc_title">-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/ar_desc"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:background="@drawable/desc_background"-->
+    <!--                android:backgroundTint="@color/desc_background"-->
+    <!--                android:fontFamily="@font/nanumsquare_acb"-->
+    <!--                android:lineSpacingMultiplier="1.5"-->
+    <!--                android:paddingHorizontal="16dp"-->
+    <!--                android:paddingVertical="12dp"-->
+    <!--                android:text="@string/ar_desc"-->
+    <!--                android:textColor="@color/title_color"-->
+    <!--                android:textSize="8sp"-->
+    <!--                app:layout_constraintEnd_toEndOf="parent"-->
+    <!--                app:layout_constraintHorizontal_bias="1.0"-->
+    <!--                app:layout_constraintTop_toBottomOf="@id/ar_desc_title" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/ar_button"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginTop="13dp"-->
+    <!--                android:background="@drawable/button_background"-->
+    <!--                android:backgroundTint="@color/black"-->
+    <!--                android:fontFamily="@font/nanumsquare_aceb"-->
+    <!--                android:paddingHorizontal="26dp"-->
+    <!--                android:paddingVertical="7dp"-->
+    <!--                android:text="@string/go_ar"-->
+    <!--                android:textColor="@color/white"-->
+    <!--                android:textSize="10sp"-->
+    <!--                app:layout_constraintStart_toEndOf="@+id/ar_service_image"-->
+    <!--                app:layout_constraintTop_toBottomOf="@+id/ar_desc" />-->
+    <!--        </LinearLayout>-->
+    <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
