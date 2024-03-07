@@ -33,6 +33,7 @@ class CartCheckDialog(context: Context) {
 
         btnCancel = dlg.findViewById(R.id.btn_cancel)
         btnCancel.setOnClickListener {
+            listener.onDialogCancel()
             dlg.dismiss()
         }
         dlg.show()

@@ -8,6 +8,10 @@ import android.os.Looper
 import android.view.WindowManager
 import android.widget.TextView
 import androidx.core.view.WindowCompat
+import androidx.navigation.NavController
+import com.hoxy.hlivv.R
+import com.hoxy.hlivv.data.infrastructure.ClientException
+import org.json.JSONObject
 import java.text.NumberFormat
 import java.util.Locale
 
@@ -33,25 +37,62 @@ object Utils {
         val formattedNumber = NumberFormat.getNumberInstance(Locale.KOREA).format(number)
         textView.text = formattedNumber
     }
-//
-//    val exceptionHandler = CoroutineExceptionHandler { _, exception ->
-//        if (exception is ClientException) {
-//            val response = JSONObject(exception.message)
-//            val message = response.getString("message")
-//
-//        }
-//    }
 
     fun showErrorDialog(msg: String, context: Context) {
         Handler(Looper.getMainLooper()).post {
             val errorHandlerDialog = ErrorHandlerDialog(context, msg)
-//            errorHandlerDialog.listener = object : OnDialogConfirmedListener {
-//                override fun onDialogConfirmed() {
-//                    listener.onDialogConfirmed()
-//                }
-//            }
             errorHandlerDialog.start()
         }
     }
+
+    fun handleApiError(
+        e: Exception,
+        navController: NavController,
+        context: Context,
+        customErrorMessage: String? = null
+    ) {
+        try {
+            if (e is ClientException) {
+                val response = JSONObject(e.message)
+                val status = response.getInt("status")
+                val message = response.getString("message")
+
+                if (status == 401 || status == 400) {
+                    navController.navigate(R.id.navigation_login)
+                } else {
+                    showErrorDialog(message, context)
+                }
+            } else {
+                showErrorDialog(customErrorMessage ?: "잠시 후 다시 시도해주세요.", context)
+            }
+        } catch (e: Exception) {
+            showErrorDialog(customErrorMessage ?: "잠시 후 다시 시도해주세요.", context)
+        }
+    }
+
+    fun handleApiError(
+        e: Exception,
+        context: Context,
+        customErrorMessage: String? = null
+    ) {
+        try {
+            if (e is ClientException) {
+                val response = JSONObject(e.message)
+                val status = response.getInt("status")
+                val message = response.getString("message")
+
+                if (status == 401 || status == 400) {
+                    showErrorDialog("로그인 후 이용해주세요", context)
+                } else {
+                    showErrorDialog(message, context)
+                }
+            } else {
+                showErrorDialog(customErrorMessage ?: "잠시 후 다시 시도해주세요.", context)
+            }
+        } catch (e: Exception) {
+            showErrorDialog(customErrorMessage ?: "잠시 후 다시 시도해주세요.", context)
+        }
+    }
+
 
 }

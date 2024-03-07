@@ -156,8 +156,6 @@ import com.hoxy.hlivv.ui.cart.payment.OnPaymentButtonListener
 class CartFragment : Fragment(), OnPaymentButtonListener {
     private var _binding: FragmentCartBinding? = null
     private val binding get() = _binding!!
-    private var listener: OnPaymentButtonListener? = null
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

@@ -15,6 +15,7 @@ import com.hoxy.hlivv.data.apis.ProductControllerApi
 import com.hoxy.hlivv.data.models.CartDto
 import com.hoxy.hlivv.data.models.ProductDto
 import com.hoxy.hlivv.data.models.ProductImageDto
+import com.hoxy.hlivv.domain.Utils.handleApiError
 import com.hoxy.hlivv.ui.cart.payment.PaymentViewModel
 import com.hoxy.hlivv.ui.liveqr.barcode.product.ImageDownloadTask
 import com.hoxy.hlivv.ui.liveqr.barcode.product.Product
@@ -275,7 +276,7 @@ class CartAdapter(
                 try{
                     cartControllerApi.deleteFromCart(deletedItem.productId!!)
                 } catch (e:Exception){
-                    Log.d("CartViewHolder","ERROR!",e)
+                    //handleApiError(e,itemView.context)
                 }
 
             }

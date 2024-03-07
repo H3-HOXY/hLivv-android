@@ -15,6 +15,7 @@ import com.hoxy.hlivv.data.apis.MemberControllerApi
 import com.hoxy.hlivv.data.infrastructure.ClientException
 import com.hoxy.hlivv.data.models.CartDto
 import com.hoxy.hlivv.databinding.FragmentBasicCartBinding
+import com.hoxy.hlivv.domain.Utils.handleApiError
 import com.hoxy.hlivv.domain.Utils.showErrorDialog
 import com.hoxy.hlivv.ui.cart.payment.PaymentViewModel
 import kotlinx.coroutines.CoroutineScope
@@ -136,7 +137,6 @@ class BasicCartFragment : Fragment(), OnSelectedItemsChanged {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel = ViewModelProvider(requireActivity()).get(PaymentViewModel::class.java)
-        val navController = findNavController()
 
         CoroutineScope(Dispatchers.IO).launch {
             try {
@@ -149,23 +149,8 @@ class BasicCartFragment : Fragment(), OnSelectedItemsChanged {
                     // RecyclerView를 설정하고 전체 카트 리스트를 어댑터에 전달
                     setupRecyclerView(cartList)
                 }
-            } catch (e: ClientException) {
-                val response = JSONObject(e.message)
-                val status = response.getInt("status")
-                val message = response.getString("message")
-                if (status == 401 || status == 400) {
-                    try {
-                        navController.navigate(R.id.navigation_login)
-                    } catch (e: Exception) {
-                        Log.d("Login", "ERROR", e)
-                    }
-
-                } else {
-                    showErrorDialog(message, requireContext())
-                }
-                Log.d("Login", "ERROR", e)
             } catch (e: Exception) {
-                showErrorDialog("잠시 후 다시 시도해주세요.", requireContext())
+                handleApiError(e, findNavController(), requireContext())
             }
         }
 
@@ -208,6 +193,7 @@ class BasicCartFragment : Fragment(), OnSelectedItemsChanged {
                     var subTotal = 0L
                     var discountTotal = 0L
                     var deliveryTotal = 0L
+                    viewModel.selectedItems.value=selectedItems
 
                     cartDtos.forEach { item ->
                         val unitPrice = item.unitPrice ?: 0L
@@ -230,7 +216,7 @@ class BasicCartFragment : Fragment(), OnSelectedItemsChanged {
                     viewModel.setNumberOfProductTypes(count)
                 }
             } catch (e: Exception) {
-                // 예외 처리를 수행
+                handleApiError(e, findNavController(), requireContext())
             }
         }
     }

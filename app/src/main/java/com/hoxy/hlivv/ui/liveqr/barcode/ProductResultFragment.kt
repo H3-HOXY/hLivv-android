@@ -28,6 +28,10 @@ class ProductResultFragment(private val workflowModel: WorkflowModel) : BottomSh
         dismiss()
     }
 
+    override fun onDialogCancel() {
+        dismiss()
+    }
+
     override fun onCreateView(
         layoutInflater: LayoutInflater,
         viewGroup: ViewGroup?,

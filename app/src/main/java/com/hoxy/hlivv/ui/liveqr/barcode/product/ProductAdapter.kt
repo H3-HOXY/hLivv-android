@@ -95,6 +95,10 @@ class ProductAdapter(
                     override fun onDialogConfirmed() {
                         listener.onDialogConfirmed()
                     }
+
+                    override fun onDialogCancel() {
+                        listener.onDialogCancel()
+                    }
                 }
                 cartCheckDialog.start()
             }

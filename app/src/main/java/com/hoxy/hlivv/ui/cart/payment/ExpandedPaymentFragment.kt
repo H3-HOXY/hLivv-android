@@ -1,6 +1,7 @@
 package com.hoxy.hlivv.ui.cart.payment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -52,6 +53,16 @@ class ExpandedPaymentFragment : Fragment() {
 
         binding.buttonDown.setOnClickListener {
             (parentFragment as? OnPaymentButtonListener)?.onPaymentCollapsed()
+        }
+
+        /**
+         * "gotoAr" 버튼에 대한 클릭 리스너를 설정하여 Unity로 이동
+         */
+
+        binding.gotoAr.setOnClickListener{
+            // 여기에 currentSelectedItems를 유니티로 전달하는 코드를 작성해주세요
+            val currentSelectedItems=viewModel.selectedItems.value
+            Log.d("ClickedItems", currentSelectedItems.toString())
         }
 
 

@@ -52,11 +52,7 @@ class BarcodeAnalyzer(
             val boundingBox = barcode.boundingBox ?: return@firstOrNull false
             Log.d("Barcode", "$barcode")
             val box = graphicOverlay.translateRect(boundingBox)
-            // 애뮬레이터
-            //box.contains(graphicOverlay.width / 2f, graphicOverlay.height / 2f)
-            // 실물 폰
             box.contains(graphicOverlay.width / 4f, graphicOverlay.height / 7f)
-            //box.contains(graphicOverlay.width / 4f, graphicOverlay.height /5f)
         }
 
         graphicOverlay.clear()
