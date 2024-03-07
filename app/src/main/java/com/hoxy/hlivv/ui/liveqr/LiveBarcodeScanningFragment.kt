@@ -306,7 +306,7 @@ class LiveBarcodeScanningFragment : BaseFragment(), View.OnClickListener {
 
     fun extractIdFromUrl(url: String): Long? {
         ///api/product/ 다음의 숫자를 추출
-        val pattern = "/api/product/(\\d+)".toRegex()
+        val pattern = "https://hlivv.com/product/(\\d+)".toRegex()
         val matchResult = pattern.find(url)
         return matchResult?.groupValues?.getOrNull(1)?.toLong()
     }

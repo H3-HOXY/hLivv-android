@@ -27,7 +27,7 @@ import com.hoxy.hlivv.data.models.Request
 import com.hoxy.hlivv.data.models.Response
 import com.hoxy.hlivv.data.models.ReviewDto
 
-class ProductControllerApi(basePath: String = "http://10.0.2.2:8080") : ApiClient(basePath) {
+class ProductControllerApi(basePath: String = "https://hlivv.com") : ApiClient(basePath) {
 
     /**
      *

@@ -24,7 +24,7 @@ import com.hoxy.hlivv.data.models.MonthlyOrderSummaryDto
 import com.hoxy.hlivv.data.models.OrderReqDto
 import com.hoxy.hlivv.data.models.OrderResDto
 
-class OrderControllerApi(basePath: String = "http://10.0.2.2:8080") : ApiClient(basePath) {
+class OrderControllerApi(basePath: String = "https://hlivv.com") : ApiClient(basePath) {
 
     /**
      *

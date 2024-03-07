@@ -24,7 +24,7 @@ import com.hoxy.hlivv.data.infrastructure.Success
 import com.hoxy.hlivv.data.models.CollaboDto
 import com.hoxy.hlivv.data.models.ProductDto
 
-class CollaboControllerApi(basePath: String = "http://10.0.2.2:8080") : ApiClient(basePath) {
+class CollaboControllerApi(basePath: String = "https://hlivv.com") : ApiClient(basePath) {
 
     /**
      *

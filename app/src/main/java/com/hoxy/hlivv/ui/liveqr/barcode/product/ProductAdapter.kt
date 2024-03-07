@@ -105,12 +105,6 @@ class ProductAdapter(
         }
 
 
-//        private fun setFormattedNumberToTextView(number: Long, textView: TextView) {
-//            val formattedNumber = NumberFormat.getNumberInstance(Locale.KOREA).format(number)
-//            textView.text = formattedNumber
-//        }
-
-
         companion object {
             fun create(parent: ViewGroup, listener: OnDialogConfirmedListener) =
                 ProductViewHolder(

@@ -26,7 +26,7 @@ import com.hoxy.hlivv.data.models.ProductDto
 import com.hoxy.hlivv.data.models.ProductImageDto
 import com.hoxy.hlivv.data.models.RestoreDto
 
-class APIApi(basePath: String = "http://10.0.2.2:8080") : ApiClient(basePath) {
+class APIApi(basePath: String = "https://hlivv.com") : ApiClient(basePath) {
 
     /**
      * memberId로 멤버 조회

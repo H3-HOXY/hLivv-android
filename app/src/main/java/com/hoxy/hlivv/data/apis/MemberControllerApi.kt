@@ -32,7 +32,7 @@ import com.hoxy.hlivv.data.models.PageOrderResDto
 import com.hoxy.hlivv.data.models.SignupDataGenDto
 import com.hoxy.hlivv.data.models.SignupDto
 
-class MemberControllerApi(basePath: String = "http://10.0.2.2:8080") : ApiClient(basePath) {
+class MemberControllerApi(basePath: String = "https://hlivv.com") : ApiClient(basePath) {
 
     /**
      *

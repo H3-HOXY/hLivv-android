@@ -276,7 +276,7 @@ class CartAdapter(
                 try{
                     cartControllerApi.deleteFromCart(deletedItem.productId!!)
                 } catch (e:Exception){
-                    //handleApiError(e,itemView.context)
+
                 }
 
             }
@@ -286,5 +286,8 @@ class CartAdapter(
         selectedItems.clear()
         callback.onSelectedItemsChanged(selectedItems)
     }
+
+
+
 
 }

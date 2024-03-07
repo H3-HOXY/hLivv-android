@@ -23,7 +23,7 @@ import com.hoxy.hlivv.data.infrastructure.Success
 import com.hoxy.hlivv.data.models.LoginDto
 import com.hoxy.hlivv.data.models.TokenDto
 
-class AuthControllerApi(basePath: String = "http://10.0.2.2:8080") : ApiClient(basePath) {
+class AuthControllerApi(basePath: String = "https://hlivv.com") : ApiClient(basePath) {
 
     /**
      *

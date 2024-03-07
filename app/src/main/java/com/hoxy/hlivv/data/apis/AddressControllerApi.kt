@@ -24,7 +24,7 @@ import com.hoxy.hlivv.data.infrastructure.Success
 import com.hoxy.hlivv.data.models.AddressDto
 import com.hoxy.hlivv.data.models.AddressReqDto
 
-class AddressControllerApi(basePath: String = "http://10.0.2.2:8080") : ApiClient(basePath) {
+class AddressControllerApi(basePath: String = "https://hlivv.com") : ApiClient(basePath) {
 
     /**
      *

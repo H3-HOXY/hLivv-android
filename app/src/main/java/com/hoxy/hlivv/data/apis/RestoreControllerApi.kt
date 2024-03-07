@@ -26,7 +26,7 @@ import com.hoxy.hlivv.data.models.RestoreEmailDto
 import com.hoxy.hlivv.data.models.RestoreRegisterDto
 import com.hoxy.hlivv.data.models.RestoreStatusDto
 
-class RestoreControllerApi(basePath: String = "http://10.0.2.2:8080") : ApiClient(basePath) {
+class RestoreControllerApi(basePath: String = "https://hlivv.com") : ApiClient(basePath) {
 
     /**
      *

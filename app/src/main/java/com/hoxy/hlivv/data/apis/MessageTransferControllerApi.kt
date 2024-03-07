@@ -21,7 +21,7 @@ import com.hoxy.hlivv.data.infrastructure.ResponseType
 import com.hoxy.hlivv.data.infrastructure.ServerError
 import com.hoxy.hlivv.data.infrastructure.ServerException
 
-class MessageTransferControllerApi(basePath: String = "http://10.0.2.2:8080") :
+class MessageTransferControllerApi(basePath: String = "https://hlivv.com") :
     ApiClient(basePath) {
 
     /**

@@ -23,7 +23,7 @@ import com.hoxy.hlivv.data.infrastructure.ServerException
 import com.hoxy.hlivv.data.infrastructure.Success
 import com.hoxy.hlivv.data.models.CartDto
 
-class CartControllerApi(basePath: String = "http://10.0.2.2:8080") : ApiClient(basePath) {
+class CartControllerApi(basePath: String = "https://hlivv.com") : ApiClient(basePath) {
 
     /**
      *

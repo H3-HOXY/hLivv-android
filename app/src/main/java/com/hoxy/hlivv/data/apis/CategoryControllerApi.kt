@@ -24,7 +24,7 @@ import com.hoxy.hlivv.data.infrastructure.Success
 import com.hoxy.hlivv.data.models.CategoryDto
 import com.hoxy.hlivv.data.models.ProductDto
 
-class CategoryControllerApi(basePath: String = "http://10.0.2.2:8080") :
+class CategoryControllerApi(basePath: String = "https://hlivv.com") :
     ApiClient(basePath) {
 
     /**
