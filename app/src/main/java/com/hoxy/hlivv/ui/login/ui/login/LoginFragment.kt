@@ -75,7 +75,9 @@ class LoginFragment : Fragment() {
                 }
                 loginResult.success?.let {
                     updateUiWithUser(it)
-                    findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+                    if (!findNavController().popBackStack()) {
+                        findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+                    }
                 }
             })
 

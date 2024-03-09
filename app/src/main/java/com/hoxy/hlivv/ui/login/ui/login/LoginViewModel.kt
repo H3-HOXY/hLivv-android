@@ -13,8 +13,12 @@ import com.hoxy.hlivv.data.infrastructure.ClientException
 import com.hoxy.hlivv.data.infrastructure.ServerException
 import com.hoxy.hlivv.data.models.LoginDto
 import com.hoxy.hlivv.data.repository.PreferencesRepository
+import com.hoxy.hlivv.domain.Utils
+import com.hoxy.hlivv.domain.Utils.handleApiError
+import com.hoxy.hlivv.domain.Utils.showErrorDialog
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import org.json.JSONObject
 
 
 class LoginViewModel(private val authControllerApi: AuthControllerApi, application: Application) :
@@ -33,36 +37,20 @@ class LoginViewModel(private val authControllerApi: AuthControllerApi, applicati
             try {
                 val tokenDto = authControllerApi.authorize(LoginDto(username, password))
                 Log.d("Login", tokenDto.toString())
-                //TokenManager.saveToken(appContext,tokenDto.toString())
                 val preferencesRepository = PreferencesRepository(appContext)
                 preferencesRepository.saveStringPref(
                     R.string.pref_key_token,
                     tokenDto.token.toString()
                 )
                 preferencesRepository.saveLoginInfo(LoginDto(username, password))
-
-                //Log.d("Login", TokenManager.getTokenFromSharedPreferences(appContext).toString())
                 _loginResult.postValue(LoginResult(success = R.string.action_sign_in_short))
             } catch (e: ClientException) {
                 _loginResult.postValue(LoginResult(error = R.string.client_error))
-            } catch (e: ServerException) {
-                _loginResult.postValue(LoginResult(error = R.string.server_error))
             } catch (e: Exception) {
-                Log.d("Login", "Exception", e)
+                showErrorDialog( "잠시 후 다시 시도해주세요.", appContext)
                 _loginResult.postValue(LoginResult(error = R.string.login_failed))
             }
         }
-
-        // can be launched in a separate asynchronous job
-
-//        val result = loginRepository.login(username, password)
-//
-//        if (result is Result.Success) {
-//            _loginResult.value =
-//                LoginResult(success = LoggedInUserView(displayName = result.data.displayName))
-//        } else {
-//            _loginResult.value = LoginResult(error = R.string.login_failed)
-//        }
     }
 
     fun loginDataChanged(username: String, password: String) {
@@ -86,7 +74,7 @@ class LoginViewModel(private val authControllerApi: AuthControllerApi, applicati
 
     // A placeholder password validation check
     private fun isPasswordValid(password: String): Boolean {
-        return password.length > 5
+        return password.length >= 3
     }
 
 //    private fun saveStringPref(context: Context, @StringRes prefKeyId: Int, value: String) {
