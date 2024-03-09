@@ -30,7 +30,8 @@ import java.util.Locale
 class CartAdapter(
     private val cartList: MutableList<CartDto>,
     private val callback: OnSelectedItemsChanged,
-    private val viewModel: PaymentViewModel
+    private val viewModel: PaymentViewModel,
+    private val recyclerView: RecyclerView
 ) :
     RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
 
@@ -120,8 +121,7 @@ class CartAdapter(
                                         }
                                     }
                                 } catch (e: Exception) {
-                                    //  예외 처리---> 다이얼로그로
-
+                                    handleApiError(e,itemView.context)
                                 }
                             }
 
@@ -150,8 +150,7 @@ class CartAdapter(
                                         }
 
                                     } catch (e: Exception) {
-                                        //  예외 처리
-
+                                        handleApiError(e,itemView.context)
                                     }
                                 }
                             }
@@ -169,14 +168,14 @@ class CartAdapter(
                                         callback.onSelectedItemsChanged(selectedItems)
                                     }
                                 } catch (e: Exception) {
-                                    Log.d("CartDto", "API ERROR", e)
+                                    handleApiError(e,itemView.context)
                                 }
                             }
                         }
 
                     }
                 } catch (e: Exception) {
-
+                    handleApiError(e,itemView.context)
                 }
 
             }
@@ -258,27 +257,25 @@ class CartAdapter(
         cartList.size
 
     fun deleteCartList() {
-        val deletedItems = mutableListOf<CartDto>()
-
         for (productId in selectedItems) {
             val position = cartList.indexOfFirst { it.productId == productId }
             if (position != -1) {
-                // 선택된 아이템을 삭제하고 삭제된 아이템 리스트에 추가
-                val deletedItem = cartList.removeAt(position)
-                deletedItems.add(deletedItem)
-                notifyItemRemoved(position)
-            }
-        }
+                CoroutineScope(Dispatchers.IO).launch {
+                    try {
+                        cartControllerApi.deleteFromCart(productId)
+                    } catch (e: EOFException) {
+                        withContext(Dispatchers.Main) {
+                            val deletedItem = cartList.removeAt(position)
+                            notifyItemRemoved(position)
+                        }
+                    } catch (e: Exception) {
+                        Log.d("CartDeleteError", "Error", e)
+                        val holder =
+                            recyclerView.findViewHolderForAdapterPosition(position) as? CartViewHolder
+                        holder?.itemView?.let { handleApiError(e, it.context) }
 
-        // 삭제된 아이템들 서버에서 삭제
-        for (deletedItem in deletedItems) {
-            CoroutineScope(Dispatchers.IO).launch {
-                try{
-                    cartControllerApi.deleteFromCart(deletedItem.productId!!)
-                } catch (e:Exception){
-
+                    }
                 }
-
             }
         }
 
@@ -286,8 +283,4 @@ class CartAdapter(
         selectedItems.clear()
         callback.onSelectedItemsChanged(selectedItems)
     }
-
-
-
-
 }

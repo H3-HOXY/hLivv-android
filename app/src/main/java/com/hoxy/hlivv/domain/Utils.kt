@@ -5,12 +5,17 @@ import android.content.Context
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.WindowManager
 import android.widget.TextView
 import androidx.core.view.WindowCompat
 import androidx.navigation.NavController
 import com.hoxy.hlivv.R
 import com.hoxy.hlivv.data.infrastructure.ClientException
+import com.hoxy.hlivv.data.repository.PreferencesRepository
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import org.json.JSONException
 import org.json.JSONObject
 import java.text.NumberFormat
 import java.util.Locale
@@ -45,7 +50,7 @@ object Utils {
         }
     }
 
-    fun handleApiError(
+    suspend fun handleApiError(
         e: Exception,
         navController: NavController,
         context: Context,
@@ -57,15 +62,27 @@ object Utils {
                 val status = response.getInt("status")
                 val message = response.getString("message")
 
-                if (status == 401 || status == 400) {
+                if (status == 401) {
                     navController.navigate(R.id.navigation_login)
                 } else {
                     showErrorDialog(message, context)
                 }
             } else {
+                Log.d("Coroutine","Error",e)
                 showErrorDialog(customErrorMessage ?: "잠시 후 다시 시도해주세요.", context)
             }
-        } catch (e: Exception) {
+        } catch (e:JSONException){
+            if(e.stackTrace.any { it.toString().contains("org.json.JSONTokener.syntaxError") }){
+                withContext(Dispatchers.Main){
+                    navController.navigate(R.id.navigation_login)
+                }
+
+            } else{
+                showErrorDialog(customErrorMessage ?: "잠시 후 다시 시도해주세요.", context)
+            }
+        }
+        catch (e: Exception) {
+            Log.d("Coroutine","Error",e)
             showErrorDialog(customErrorMessage ?: "잠시 후 다시 시도해주세요.", context)
         }
     }

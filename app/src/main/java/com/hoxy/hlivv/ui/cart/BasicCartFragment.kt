@@ -168,7 +168,7 @@ class BasicCartFragment : Fragment(), OnSelectedItemsChanged {
     private fun setupRecyclerView(cartList: MutableList<CartDto>) {
         // 카트 어댑터를 생성하고 RecyclerView에 설정
         val recyclerView: RecyclerView = binding.cartRecyclerView
-        cartAdapter = CartAdapter(cartList, this@BasicCartFragment, viewModel)
+        cartAdapter = CartAdapter(cartList, this@BasicCartFragment, viewModel,recyclerView)
         recyclerView.itemAnimator = null
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = cartAdapter
