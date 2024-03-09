@@ -10,16 +10,11 @@ import androidx.lifecycle.viewModelScope
 import com.hoxy.hlivv.R
 import com.hoxy.hlivv.data.apis.AuthControllerApi
 import com.hoxy.hlivv.data.infrastructure.ClientException
-import com.hoxy.hlivv.data.infrastructure.ServerException
 import com.hoxy.hlivv.data.models.LoginDto
 import com.hoxy.hlivv.data.repository.PreferencesRepository
-import com.hoxy.hlivv.domain.Utils
-import com.hoxy.hlivv.domain.Utils.handleApiError
 import com.hoxy.hlivv.domain.Utils.showErrorDialog
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import org.json.JSONObject
-
 
 class LoginViewModel(private val authControllerApi: AuthControllerApi, application: Application) :
     AndroidViewModel(application) {
@@ -47,7 +42,6 @@ class LoginViewModel(private val authControllerApi: AuthControllerApi, applicati
             } catch (e: ClientException) {
                 _loginResult.postValue(LoginResult(error = R.string.client_error))
             } catch (e: Exception) {
-                showErrorDialog( "잠시 후 다시 시도해주세요.", appContext)
                 _loginResult.postValue(LoginResult(error = R.string.login_failed))
             }
         }
