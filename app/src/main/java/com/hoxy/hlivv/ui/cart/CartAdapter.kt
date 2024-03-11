@@ -121,7 +121,7 @@ class CartAdapter(
                                         }
                                     }
                                 } catch (e: Exception) {
-                                    handleApiError(e,itemView.context)
+                                    handleApiError(e, itemView.context)
                                 }
                             }
 
@@ -150,7 +150,7 @@ class CartAdapter(
                                         }
 
                                     } catch (e: Exception) {
-                                        handleApiError(e,itemView.context)
+                                        handleApiError(e, itemView.context)
                                     }
                                 }
                             }
@@ -168,14 +168,14 @@ class CartAdapter(
                                         callback.onSelectedItemsChanged(selectedItems)
                                     }
                                 } catch (e: Exception) {
-                                    handleApiError(e,itemView.context)
+                                    handleApiError(e, itemView.context)
                                 }
                             }
                         }
 
                     }
                 } catch (e: Exception) {
-                    handleApiError(e,itemView.context)
+                    handleApiError(e, itemView.context)
                 }
 
             }
@@ -231,7 +231,6 @@ class CartAdapter(
             super.onBindViewHolder(holder, position, payloads)
         }
     }
-
 
 
     fun selectAllItems(isChecked: Boolean) {

@@ -6,7 +6,6 @@ import android.animation.AnimatorSet
 import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,7 +27,6 @@ import com.hoxy.hlivv.R
 import com.hoxy.hlivv.data.apis.ProductControllerApi
 import com.hoxy.hlivv.data.models.ProductDto
 import com.hoxy.hlivv.data.models.ProductImageDto
-import com.hoxy.hlivv.domain.Utils
 import com.hoxy.hlivv.domain.Utils.handleApiError
 import com.hoxy.hlivv.domain.Utils.showErrorDialog
 import com.hoxy.hlivv.ui.component.BaseFragment
@@ -286,7 +284,7 @@ class LiveBarcodeScanningFragment : BaseFragment(), View.OnClickListener {
                             }
                         } catch (e: Exception) {
                             handleApiError(e, findNavController(), requireContext())
-                            withContext(Dispatchers.Main){
+                            withContext(Dispatchers.Main) {
                                 activity?.let {
                                     workflowModel!!.setWorkflowState(WorkflowModel.WorkflowState.DETECTING)
                                 }
@@ -294,7 +292,7 @@ class LiveBarcodeScanningFragment : BaseFragment(), View.OnClickListener {
                         }
                     }
 
-                } else{
+                } else {
                     showErrorDialog("찾으시는 상품이  없습니다.", requireContext())
                     activity?.let {
                         workflowModel!!.setWorkflowState(WorkflowModel.WorkflowState.DETECTING)

@@ -56,7 +56,7 @@ class AuthInterceptor(private val contextProvider: () -> Context) : Interceptor 
         if (response.code == 401) {
             // 로그인 정보 가져오기
             val loginInfo = preferencesRepository.getLoginInfo()
-            if (loginInfo.loginId.isNotEmpty() && loginInfo.loginPw.isNotEmpty()){
+            if (loginInfo.loginId.isNotEmpty() && loginInfo.loginPw.isNotEmpty()) {
                 // 토큰 재발급
                 runBlocking {
                     val tokenDto = authControllerApi.authorize(loginInfo)

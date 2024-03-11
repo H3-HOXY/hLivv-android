@@ -1,7 +1,6 @@
 package com.hoxy.hlivv.ui.cart
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,19 +9,15 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.hoxy.hlivv.R
 import com.hoxy.hlivv.data.apis.MemberControllerApi
-import com.hoxy.hlivv.data.infrastructure.ClientException
 import com.hoxy.hlivv.data.models.CartDto
 import com.hoxy.hlivv.databinding.FragmentBasicCartBinding
 import com.hoxy.hlivv.domain.Utils.handleApiError
-import com.hoxy.hlivv.domain.Utils.showErrorDialog
 import com.hoxy.hlivv.ui.cart.payment.PaymentViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import org.json.JSONObject
 
 //class CartFragment : Fragment(),OnSelectedItemsChanged {
 //    private var _binding: FragmentCartBinding? = null
@@ -160,7 +155,7 @@ class BasicCartFragment : Fragment(), OnSelectedItemsChanged {
             cartAdapter.selectAllItems(isChecked)
         }
 
-        binding.deleteList.setOnClickListener{
+        binding.deleteList.setOnClickListener {
             cartAdapter.deleteCartList()
         }
     }
@@ -168,7 +163,7 @@ class BasicCartFragment : Fragment(), OnSelectedItemsChanged {
     private fun setupRecyclerView(cartList: MutableList<CartDto>) {
         // 카트 어댑터를 생성하고 RecyclerView에 설정
         val recyclerView: RecyclerView = binding.cartRecyclerView
-        cartAdapter = CartAdapter(cartList, this@BasicCartFragment, viewModel,recyclerView)
+        cartAdapter = CartAdapter(cartList, this@BasicCartFragment, viewModel, recyclerView)
         recyclerView.itemAnimator = null
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.adapter = cartAdapter
@@ -193,7 +188,7 @@ class BasicCartFragment : Fragment(), OnSelectedItemsChanged {
                     var subTotal = 0L
                     var discountTotal = 0L
                     var deliveryTotal = 0L
-                    viewModel.selectedItems.value=selectedItems
+                    viewModel.selectedItems.value = selectedItems
 
                     cartDtos.forEach { item ->
                         val unitPrice = item.unitPrice ?: 0L

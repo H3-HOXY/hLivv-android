@@ -12,7 +12,6 @@ import androidx.core.view.WindowCompat
 import androidx.navigation.NavController
 import com.hoxy.hlivv.R
 import com.hoxy.hlivv.data.infrastructure.ClientException
-import com.hoxy.hlivv.data.repository.PreferencesRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.json.JSONException
@@ -68,21 +67,20 @@ object Utils {
                     showErrorDialog(message, context)
                 }
             } else {
-                Log.d("Coroutine","Error",e)
+                Log.d("Coroutine", "Error", e)
                 showErrorDialog(customErrorMessage ?: "잠시 후 다시 시도해주세요.", context)
             }
-        } catch (e:JSONException){
-            if(e.stackTrace.any { it.toString().contains("org.json.JSONTokener.syntaxError") }){
-                withContext(Dispatchers.Main){
+        } catch (e: JSONException) {
+            if (e.stackTrace.any { it.toString().contains("org.json.JSONTokener.syntaxError") }) {
+                withContext(Dispatchers.Main) {
                     navController.navigate(R.id.navigation_login)
                 }
 
-            } else{
+            } else {
                 showErrorDialog(customErrorMessage ?: "잠시 후 다시 시도해주세요.", context)
             }
-        }
-        catch (e: Exception) {
-            Log.d("Coroutine","Error",e)
+        } catch (e: Exception) {
+            Log.d("Coroutine", "Error", e)
             showErrorDialog(customErrorMessage ?: "잠시 후 다시 시도해주세요.", context)
         }
     }

@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.hoxy.hlivv.R
 import com.hoxy.hlivv.data.apis.CartControllerApi
 import com.hoxy.hlivv.data.models.CartDto
-import com.hoxy.hlivv.domain.Utils
 import com.hoxy.hlivv.domain.Utils.handleApiError
 import com.hoxy.hlivv.domain.Utils.setFormattedNumberToTextView
 import com.hoxy.hlivv.ui.liveqr.dialog.CartCheckDialog

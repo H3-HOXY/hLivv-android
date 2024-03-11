@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class PaymentViewModel : ViewModel() {
-    val selectedItems:MutableLiveData<List<Long>> = MutableLiveData()
+    val selectedItems: MutableLiveData<List<Long>> = MutableLiveData()
     val numberOfArProduct = MutableLiveData<Int>().apply { value = 0 }
     val subTotalPrice = MutableLiveData<Long>().apply { value = 0L }
     val discountTotalPrice = MutableLiveData<Long>().apply { value = 0L }

@@ -59,9 +59,9 @@ class ExpandedPaymentFragment : Fragment() {
          * "gotoAr" 버튼에 대한 클릭 리스너를 설정하여 Unity로 이동
          */
 
-        binding.gotoAr.setOnClickListener{
+        binding.gotoAr.setOnClickListener {
             // 여기에 currentSelectedItems를 유니티로 전달하는 코드를 작성해주세요
-            val currentSelectedItems=viewModel.selectedItems.value
+            val currentSelectedItems = viewModel.selectedItems.value
             Log.d("ClickedItems", currentSelectedItems.toString())
         }
 
