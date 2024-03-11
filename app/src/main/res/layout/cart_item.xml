@@ -32,6 +32,8 @@
         android:layout_toStartOf="@id/cart_delete_btn"
         android:layout_toEndOf="@id/cart_product_image"
         android:fontFamily="@font/nanumsquare_acb"
+        android:maxLines="4"
+        android:ellipsize="end"
         android:paddingTop="4dp"
         android:paddingEnd="4dp"
         android:textColor="@color/black"

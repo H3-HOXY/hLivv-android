@@ -12,7 +12,6 @@ import com.hoxy.hlivv.data.apis.AuthControllerApi
 import com.hoxy.hlivv.data.infrastructure.ClientException
 import com.hoxy.hlivv.data.models.LoginDto
 import com.hoxy.hlivv.data.repository.PreferencesRepository
-import com.hoxy.hlivv.domain.Utils.showErrorDialog
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -70,20 +69,4 @@ class LoginViewModel(private val authControllerApi: AuthControllerApi, applicati
     private fun isPasswordValid(password: String): Boolean {
         return password.length >= 3
     }
-
-//    private fun saveStringPref(context: Context, @StringRes prefKeyId: Int, value: String) {
-//        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
-//        val prefKey = context.getString(prefKeyId)
-//        with(sharedPreferences.edit()) {
-//            putString(prefKey, value)
-//            apply()
-//        }
-//    }
-//
-//    private fun getJwtToken(context: Context, @StringRes prefKeyId: Int, defaultValue: String): String {
-//        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
-//        val prefKey = context.getString(prefKeyId)
-//        return sharedPreferences.getString(prefKey, defaultValue) ?: defaultValue
-//    }
-
 }

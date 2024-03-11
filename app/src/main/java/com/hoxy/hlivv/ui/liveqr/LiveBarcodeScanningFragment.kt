@@ -286,10 +286,11 @@ class LiveBarcodeScanningFragment : BaseFragment(), View.OnClickListener {
                             }
                         } catch (e: Exception) {
                             handleApiError(e, findNavController(), requireContext())
-//                            activity?.let {
-//                                workflowModel!!.setWorkflowState(WorkflowModel.WorkflowState.DETECTING)
-//                            }
-
+                            withContext(Dispatchers.Main){
+                                activity?.let {
+                                    workflowModel!!.setWorkflowState(WorkflowModel.WorkflowState.DETECTING)
+                                }
+                            }
                         }
                     }
 
