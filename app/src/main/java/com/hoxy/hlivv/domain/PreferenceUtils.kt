@@ -8,6 +8,9 @@ import com.google.mlkit.vision.barcode.common.Barcode
 import com.hoxy.hlivv.R
 import com.hoxy.hlivv.ui.liveqr.barcode.graphic.GraphicOverlay
 
+/**
+ * @author 반정현
+ */
 object PreferenceUtils {
 
     fun getBarcodeReticleBox(overlay: GraphicOverlay): RectF {

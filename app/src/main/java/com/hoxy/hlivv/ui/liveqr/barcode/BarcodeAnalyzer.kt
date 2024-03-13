@@ -17,7 +17,9 @@ import com.hoxy.hlivv.ui.liveqr.barcode.graphic.BarcodeReticleGraphic
 import com.hoxy.hlivv.ui.liveqr.barcode.graphic.GraphicOverlay
 import com.hoxy.hlivv.ui.liveqr.camera.WorkflowModel
 
-
+/**
+ * @author 반정현
+ */
 class BarcodeAnalyzer(
     private val workflowModel: WorkflowModel,
     private val graphicOverlay: GraphicOverlay
@@ -50,7 +52,6 @@ class BarcodeAnalyzer(
     private fun processBarcodeResults(barcodes: List<Barcode>) {
         val barcodeInCenter = barcodes.firstOrNull { barcode ->
             val boundingBox = barcode.boundingBox ?: return@firstOrNull false
-            Log.d("Barcode", "$barcode")
             val box = graphicOverlay.translateRect(boundingBox)
             box.contains(graphicOverlay.width / 4f, graphicOverlay.height / 7f)
         }

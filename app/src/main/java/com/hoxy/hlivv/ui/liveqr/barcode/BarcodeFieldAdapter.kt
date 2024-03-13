@@ -6,7 +6,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.hoxy.hlivv.R
-
+/**
+ * @author 반정현
+ */
 internal class BarcodeFieldAdapter(private val barcodeFieldList: List<BarcodeField>) :
     RecyclerView.Adapter<BarcodeFieldAdapter.BarcodeFieldViewHolder>() {
 

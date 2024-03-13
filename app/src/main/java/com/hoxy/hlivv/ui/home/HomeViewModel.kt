@@ -4,6 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
+/**
+ * @author 반정현
+ */
 class HomeViewModel : ViewModel() {
 
     private val _loginStatus = MutableLiveData<String>()

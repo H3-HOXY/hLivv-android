@@ -1,6 +1,9 @@
 package com.hoxy.hlivv.data.infrastructure
 
 /**
+ * @author 반정현
+ */
+/**
  * Defines a config object for a given request.
  * NOTE: This object doesn't include 'body' because it
  *       allows for caching of the constructed object

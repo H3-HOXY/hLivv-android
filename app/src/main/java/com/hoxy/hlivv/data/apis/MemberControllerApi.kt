@@ -31,7 +31,9 @@ import com.hoxy.hlivv.data.models.PageMemberCouponDto
 import com.hoxy.hlivv.data.models.PageOrderResDto
 import com.hoxy.hlivv.data.models.SignupDataGenDto
 import com.hoxy.hlivv.data.models.SignupDto
-
+/**
+ * @author 반정현
+ */
 class MemberControllerApi(basePath: String = "https://hlivv.com") : ApiClient(basePath) {
 
     /**

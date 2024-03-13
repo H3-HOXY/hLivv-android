@@ -58,6 +58,9 @@ import java.util.concurrent.Executors
  * limitations under the License.
  */
 
+/**
+ * @author 반정현
+ */
 class LiveBarcodeScanningFragment : BaseFragment(), View.OnClickListener {
 
     private var preview: PreviewView? = null

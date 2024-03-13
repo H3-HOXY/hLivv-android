@@ -15,6 +15,9 @@ import com.hoxy.hlivv.data.repository.PreferencesRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+/**
+ * @author 반정현
+ */
 class LoginViewModel(private val authControllerApi: AuthControllerApi, application: Application) :
     AndroidViewModel(application) {
 
@@ -30,7 +33,6 @@ class LoginViewModel(private val authControllerApi: AuthControllerApi, applicati
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val tokenDto = authControllerApi.authorize(LoginDto(username, password))
-                Log.d("Login", tokenDto.toString())
                 val preferencesRepository = PreferencesRepository(appContext)
                 preferencesRepository.saveStringPref(
                     R.string.pref_key_token,

@@ -23,6 +23,9 @@ import com.hoxy.hlivv.data.infrastructure.Success
 import com.hoxy.hlivv.data.models.LoginDto
 import com.hoxy.hlivv.data.models.TokenDto
 
+/**
+ * @author 반정현
+ */
 class AuthControllerApi(basePath: String = "https://hlivv.com") : ApiClient(basePath) {
 
     /**

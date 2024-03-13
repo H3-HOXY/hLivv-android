@@ -7,6 +7,9 @@ import com.squareup.moshi.adapters.Rfc3339DateJsonAdapter
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import java.util.Date
 
+/**
+ * @author 반정현
+ */
 object Serializer {
     @JvmStatic
     val moshi: Moshi = Moshi.Builder()

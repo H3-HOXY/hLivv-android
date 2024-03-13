@@ -10,6 +10,9 @@ import com.hoxy.hlivv.R
 import com.hoxy.hlivv.databinding.FragmentOnboardingStartBinding
 import com.hoxy.hlivv.ui.component.BaseFragment
 
+/**
+ * @author 반정현
+ */
 class OnboardingStartFragment : BaseFragment() {
     private var _binding: FragmentOnboardingStartBinding? = null
     private val binding get() = _binding!!

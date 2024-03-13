@@ -33,17 +33,6 @@
             app:popUpToInclusive="true" />
     </fragment>
 
-    <fragment
-        android:id="@+id/navigation_menu"
-        android:name="com.hoxy.hlivv.ui.menu.MenuFragment"
-        android:label="@string/title_menu"
-        tools:layout="@layout/fragment_menu" />
-
-    <fragment
-        android:id="@+id/navigation_search"
-        android:name="com.hoxy.hlivv.ui.search.SearchFragment"
-        android:label="@string/title_menu"
-        tools:layout="@layout/fragment_search" />
 
     <fragment
         android:id="@+id/navigation_home"
@@ -55,23 +44,12 @@
             app:destination="@id/navigation_login" />
     </fragment>
 
-    <fragment
-        android:id="@+id/qr_fragment"
-        android:name="com.hoxy.hlivv.ui.qr.QRScannerFragment"
-        android:label="@string/title_qr"
-        tools:layout="@layout/fragment_qr_scanner" />
 
     <fragment
         android:id="@+id/navigation_qr"
         android:name="com.hoxy.hlivv.ui.liveqr.LiveBarcodeScanningFragment"
         android:label="@string/title_qr"
         tools:layout="@layout/fragment_live_barcode" />
-
-    <fragment
-        android:id="@+id/navigation_my"
-        android:name="com.hoxy.hlivv.ui.my.MyFragment"
-        android:label="@string/title_my"
-        tools:layout="@layout/fragment_my" />
 
 
     <fragment

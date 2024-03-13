@@ -10,6 +10,9 @@ import com.hoxy.hlivv.databinding.BasicPaymentBottomSheetBinding
 import com.hoxy.hlivv.domain.Utils.setFormattedIntToTextView
 import com.hoxy.hlivv.domain.Utils.setFormattedNumberToTextView
 
+/**
+ * @author 반정현
+ */
 class BasicPaymentFragment : Fragment() {
     private var _binding: BasicPaymentBottomSheetBinding? = null
     private val binding get() = _binding!!

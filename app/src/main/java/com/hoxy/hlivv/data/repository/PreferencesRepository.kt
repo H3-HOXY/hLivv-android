@@ -6,25 +6,10 @@ import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
 import com.hoxy.hlivv.data.models.LoginDto
 
-//class PreferencesRepository(private val context: Context) {
-//
-//    private val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
-//
-//    fun saveStringPref(@StringRes prefKeyId: Int, value: String) {
-//        val prefKey = context.getString(prefKeyId)
-//        with(sharedPreferences.edit()) {
-//            putString(prefKey, value)
-//            apply()
-//        }
-//    }
-//
-//    fun getStringPref(@StringRes prefKeyId: Int, defaultValue: String): String {
-//        val prefKey = context.getString(prefKeyId)
-//        return sharedPreferences.getString(prefKey, defaultValue) ?: defaultValue
-//    }
-//}
 
-
+/**
+ * @author 반정현
+ */
 class PreferencesRepository(private val context: Context) {
 
     private val masterKey = MasterKey.Builder(context)

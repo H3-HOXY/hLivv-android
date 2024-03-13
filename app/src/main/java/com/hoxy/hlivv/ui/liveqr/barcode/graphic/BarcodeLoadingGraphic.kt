@@ -6,6 +6,9 @@ import android.graphics.Path
 import android.graphics.Point
 import android.graphics.PointF
 
+/**
+ * @author 반정현
+ */
 internal class BarcodeLoadingGraphic(
     overlay: GraphicOverlay,
     private val loadingAnimator: ValueAnimator

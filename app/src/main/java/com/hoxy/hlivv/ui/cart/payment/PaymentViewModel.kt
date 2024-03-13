@@ -3,6 +3,9 @@ package com.hoxy.hlivv.ui.cart.payment
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
+/**
+ * @author 반정현
+ */
 class PaymentViewModel : ViewModel() {
     val selectedItems: MutableLiveData<List<Long>> = MutableLiveData()
     val numberOfArProduct = MutableLiveData<Int>().apply { value = 0 }

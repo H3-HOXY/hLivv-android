@@ -6,6 +6,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.hoxy.hlivv.data.apis.AuthControllerApi
 
 /**
+ * @author 반정현
+ */
+/**
  * ViewModel provider factory to instantiate LoginViewModel.
  * Required given LoginViewModel has a non-empty constructor
  */

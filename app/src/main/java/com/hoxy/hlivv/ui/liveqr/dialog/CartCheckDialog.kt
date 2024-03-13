@@ -9,6 +9,9 @@ import android.widget.Button
 import com.hoxy.hlivv.R
 import com.hoxy.hlivv.ui.liveqr.barcode.product.OnDialogConfirmedListener
 
+/**
+ * @author 반정현
+ */
 class CartCheckDialog(context: Context) {
 
     lateinit var listener: OnDialogConfirmedListener

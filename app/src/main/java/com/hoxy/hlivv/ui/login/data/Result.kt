@@ -4,6 +4,9 @@ package com.hoxy.hlivv.ui.login.data
  * A generic class that holds a value with its loading status.
  * @param <T>
  */
+/**
+ * @author 반정현
+ */
 sealed class Result<out T : Any> {
 
     data class Success<out T : Any>(val data: T) : Result<T>()

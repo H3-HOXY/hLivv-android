@@ -13,7 +13,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.hoxy.hlivv.R
 import com.hoxy.hlivv.ui.liveqr.camera.WorkflowModel
-
+/**
+ * @author 반정현
+ */
 class BarcodeResultFragment(private val workflowModel: WorkflowModel) :
     BottomSheetDialogFragment() {
 
@@ -50,7 +52,6 @@ class BarcodeResultFragment(private val workflowModel: WorkflowModel) :
 
 
     override fun onDismiss(dialogInterface: DialogInterface) {
-        Log.d("Fragment", "Setting WorkflowState to DETECTING")
         activity?.let {
             workflowModel.setWorkflowState(WorkflowModel.WorkflowState.DETECTING)
         }
@@ -59,13 +60,11 @@ class BarcodeResultFragment(private val workflowModel: WorkflowModel) :
 
     override fun onPause() {
         super.onPause()
-        Log.d("Fragment", "onPause")
     }
 
 
     override fun onDestroyView() {
         super.onDestroyView()
-        Log.d("Fragment", "onDestroyView")
     }
 
     companion object {

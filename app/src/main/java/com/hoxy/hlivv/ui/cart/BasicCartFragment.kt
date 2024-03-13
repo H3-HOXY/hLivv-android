@@ -19,90 +19,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-//class CartFragment : Fragment(),OnSelectedItemsChanged {
-//    private var _binding: FragmentCartBinding? = null
-//    private lateinit var cartAdapter: CartAdapter
-//    private var currentPage = 0
-//    private val pageSize = 2
-//    private val binding get() = _binding!!
-//
-//    override fun onCreateView(
-//        inflater: LayoutInflater,
-//        container: ViewGroup?,
-//        savedInstanceState: Bundle?
-//    ): View {
-//        _binding = FragmentCartBinding.inflate(inflater, container, false)
-//        return binding.root
-//    }
-//
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//
-//        loadNextPage()
-//        cartAdapter = CartAdapter(mutableListOf(),this@CartFragment)
-//        val recyclerView: RecyclerView=binding.cartRecyclerView
-//        recyclerView.layoutManager=LinearLayoutManager(context)
-//        recyclerView.adapter = cartAdapter
-//        binding.totalCheck.setOnClickListener{
-//            val isChecked=binding.totalCheck.isChecked
-//            cartAdapter.selectAllItems(isChecked)
-//        }
-//
-////        CoroutineScope(Dispatchers.IO).launch {
-////            try{
-////                val memberControllerApi=MemberControllerApi()
-////                val cartList=memberControllerApi.getAllCarts().toList()
-////                withContext(Dispatchers.Main) {
-////                    val cartAdapter=CartAdapter(cartList)
-////                    recyclerView.adapter=cartAdapter
-////                }
-////            }
-////            catch (e:Exception){
-////
-////            }
-////        }
-//        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-//            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-//                super.onScrolled(recyclerView, dx, dy)
-//
-//                val layoutManager = recyclerView.layoutManager as LinearLayoutManager
-//                val visibleItemCount = layoutManager.childCount
-//                val totalItemCount = layoutManager.itemCount
-//                val firstVisibleItem = layoutManager.findFirstVisibleItemPosition()
-//
-//                if (visibleItemCount + firstVisibleItem >= totalItemCount && firstVisibleItem >= 0) {
-//                    loadNextPage()
-//                }
-//            }
-//        })
-//    }
-//
-//    private fun loadNextPage() {
-//        CoroutineScope(Dispatchers.IO).launch {
-//            try {
-//                val memberControllerApi = MemberControllerApi()
-//                val pageCartDto = memberControllerApi.getCarts(currentPage, pageSize)
-//                withContext(Dispatchers.Main) {
-//                    val newItems = pageCartDto.content ?: emptyArray()
-//                    cartAdapter.addItems(newItems.toList())
-//                    currentPage++
-//                }
-//            } catch (e:Exception){
-//
-//            }
-//        }
-//
-//    }
-//
-//    override fun onDestroyView() {
-//        super.onDestroyView()
-//        _binding = null
-//    }
-//
-//    override fun onSelectedItemsChanged(selectedItems: List<Long>) {
-//        TODO("Not yet implemented")
-//    }
-//}
+/**
+ * @author 반정현
+ */
 class BasicCartFragment : Fragment(), OnSelectedItemsChanged {
     private var _binding: FragmentBasicCartBinding? = null
     private lateinit var cartAdapter: CartAdapter

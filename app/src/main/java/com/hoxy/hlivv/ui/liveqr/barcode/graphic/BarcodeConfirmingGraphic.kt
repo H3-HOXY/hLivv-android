@@ -5,6 +5,9 @@ import android.graphics.Path
 import com.google.mlkit.vision.barcode.common.Barcode
 import com.hoxy.hlivv.domain.PreferenceUtils
 
+/**
+ * @author 반정현
+ */
 internal class BarcodeConfirmingGraphic(overlay: GraphicOverlay, private val barcode: Barcode) :
     BarcodeGraphicBase(overlay) {
 

@@ -20,7 +20,9 @@ import com.hoxy.hlivv.data.infrastructure.RequestMethod
 import com.hoxy.hlivv.data.infrastructure.ResponseType
 import com.hoxy.hlivv.data.infrastructure.ServerError
 import com.hoxy.hlivv.data.infrastructure.ServerException
-
+/**
+ * @author 반정현
+ */
 class MessageTransferControllerApi(basePath: String = "https://hlivv.com") :
     ApiClient(basePath) {
 

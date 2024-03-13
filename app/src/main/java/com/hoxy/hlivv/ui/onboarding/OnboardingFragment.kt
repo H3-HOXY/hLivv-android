@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import com.hoxy.hlivv.databinding.FragmentOnboardingBinding
 import com.hoxy.hlivv.ui.component.BaseFragment
 
-
+/**
+ * @author 반정현
+ */
 class OnboardingFragment : BaseFragment() {
 
     private var _binding: FragmentOnboardingBinding? = null
@@ -28,8 +30,8 @@ class OnboardingFragment : BaseFragment() {
 
     private fun setupViewPager() {
         val fragmentList = arrayListOf(
-            OnboardingFirstFragment.newInstance(),
-            OnboardingSecondFragment.newInstance(),
+//            OnboardingFirstFragment.newInstance(),
+//            OnboardingSecondFragment.newInstance(),
             OnboardingStartFragment.newInstance()
         )
 

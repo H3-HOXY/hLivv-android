@@ -9,6 +9,9 @@ import android.view.View
 import androidx.camera.view.PreviewView
 import com.hoxy.hlivv.domain.CameraUtils
 
+/**
+ * @author 반정현
+ */
 class GraphicOverlay(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private val lock = Any()
 

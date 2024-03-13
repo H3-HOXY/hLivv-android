@@ -15,6 +15,9 @@ import okhttp3.ResponseBody
 import java.io.File
 import java.util.Locale
 
+/**
+ * @author 반정현
+ */
 open class ApiClient(val baseUrl: String) {
     companion object {
         protected const val ContentType = "Content-Type"

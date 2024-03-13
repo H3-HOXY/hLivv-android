@@ -27,6 +27,9 @@ import java.io.EOFException
 import java.text.NumberFormat
 import java.util.Locale
 
+/**
+ * @author 반정현
+ */
 class CartAdapter(
     private val cartList: MutableList<CartDto>,
     private val callback: OnSelectedItemsChanged,
@@ -72,10 +75,8 @@ class CartAdapter(
                         arSupported.visibility = View.GONE
                     }
                     checkBox.isChecked = isAllSelected
-                    Log.d("TotalCheckBox", "$isAllSelected")
                     checkBox.setOnClickListener {
                         val isChecked = checkBox.isChecked
-                        Log.d("isChecked", "$checkBox.isChecked, $adapterPosition")
                         if (isChecked) {
                             selectedItems.add(cartDto.productId)
                         } else {
@@ -268,7 +269,6 @@ class CartAdapter(
                             notifyItemRemoved(position)
                         }
                     } catch (e: Exception) {
-                        Log.d("CartDeleteError", "Error", e)
                         val holder =
                             recyclerView.findViewHolderForAdapterPosition(position) as? CartViewHolder
                         holder?.itemView?.let { handleApiError(e, it.context) }

@@ -9,6 +9,9 @@ import android.widget.Button
 import android.widget.TextView
 import com.hoxy.hlivv.R
 
+/**
+ * @author 반정현
+ */
 class ErrorHandlerDialog(context: Context, private val msg: String) {
 
     // lateinit var listener: OnDialogConfirmedListener

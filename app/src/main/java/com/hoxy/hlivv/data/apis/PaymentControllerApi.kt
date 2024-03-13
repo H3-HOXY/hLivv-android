@@ -22,7 +22,9 @@ import com.hoxy.hlivv.data.infrastructure.ServerException
 import com.hoxy.hlivv.data.infrastructure.Success
 import com.hoxy.hlivv.data.models.IamportResponsePayment
 
-
+/**
+ * @author 반정현
+ */
 class PaymentControllerApi(basePath: String = "https://hlivv.com") :
     ApiClient(basePath) {
 

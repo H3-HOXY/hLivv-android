@@ -2,6 +2,9 @@
 
 package com.hoxy.hlivv.data.infrastructure
 
+/**
+ * @author 반정현
+ */
 open class ClientException : RuntimeException {
 
     /**

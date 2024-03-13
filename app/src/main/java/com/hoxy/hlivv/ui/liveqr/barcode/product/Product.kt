@@ -4,8 +4,9 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 
-//data class Product internal constructor(val imageUrl: String, val title: String, val price: String)
-
+/**
+ * @author 반정현
+ */
 @Parcelize
 data class Product(
     val productId: Long,

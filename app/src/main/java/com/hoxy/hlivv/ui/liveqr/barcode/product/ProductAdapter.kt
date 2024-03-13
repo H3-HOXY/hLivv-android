@@ -21,6 +21,9 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+/**
+ * @author 반정현
+ */
 class ProductAdapter(
     private val productList: List<Product>,
     private val listener: OnDialogConfirmedListener
@@ -83,7 +86,6 @@ class ProductAdapter(
                         showSuccessDialog("장바구니에 담았습니다.", listener)
                     } catch (e: Exception) {
                         handleApiError(e, itemView.context)
-                        Log.e("ADDCART", "${product.productId}, ${quantity}", e)
                     }
                 }
 

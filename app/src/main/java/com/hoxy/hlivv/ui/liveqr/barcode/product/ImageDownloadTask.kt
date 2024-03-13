@@ -21,7 +21,9 @@ import kotlinx.coroutines.withContext
 import java.io.IOException
 import java.net.URL
 
-
+/**
+ * @author 반정현
+ */
 class ImageDownloadTask(private val imageView: ImageView, private val maxImageWidth: Int) {
     private val job = Job()
     private val coroutineScope = CoroutineScope(Dispatchers.IO + job)
@@ -61,7 +63,6 @@ class ImageDownloadTask(private val imageView: ImageView, private val maxImageWi
             inputStream.close()
         } catch (e: IOException) {
             e.printStackTrace()
-            Log.e(TAG, "Image download failed: $url", e)
             return loadDefaultImage()
 
         }

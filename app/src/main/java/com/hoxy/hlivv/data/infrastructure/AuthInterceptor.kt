@@ -8,28 +8,9 @@ import kotlinx.coroutines.runBlocking
 import okhttp3.Interceptor
 import okhttp3.Response
 
-//class AuthInterceptor(private val contextProvider: () -> Context) : Interceptor {
-//
-//    override fun intercept(chain: Interceptor.Chain): Response {
-//        val originalRequest = chain.request()
-//
-//        // 토큰 가져오기
-//        val preferencesRepository=PreferencesRepository(contextProvider())
-//        val token=preferencesRepository.getStringPref(R.string.pref_key_token,"")
-//
-//        // 토큰이 있으면 헤더에 추가
-//        val newRequest = if (token != null && token.isNotEmpty()) {
-//            originalRequest.newBuilder()
-//                .header("Authorization", "Bearer $token")
-//                .build()
-//        } else {
-//            originalRequest
-//        }
-//
-//        return chain.proceed(newRequest)
-//    }
-//}
-
+/**
+ * @author 반정현
+ */
 class AuthInterceptor(private val contextProvider: () -> Context) : Interceptor {
     val authControllerApi = AuthControllerApi()
 

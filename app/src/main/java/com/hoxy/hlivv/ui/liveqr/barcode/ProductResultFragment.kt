@@ -17,7 +17,9 @@ import com.hoxy.hlivv.ui.liveqr.barcode.product.OnDialogConfirmedListener
 import com.hoxy.hlivv.ui.liveqr.barcode.product.Product
 import com.hoxy.hlivv.ui.liveqr.barcode.product.ProductAdapter
 import com.hoxy.hlivv.ui.liveqr.camera.WorkflowModel
-
+/**
+ * @author 반정현
+ */
 class ProductResultFragment(private val workflowModel: WorkflowModel) : BottomSheetDialogFragment(),
     OnDialogConfirmedListener {
 
@@ -64,7 +66,6 @@ class ProductResultFragment(private val workflowModel: WorkflowModel) : BottomSh
 
 
     override fun onDismiss(dialogInterface: DialogInterface) {
-        Log.d("Fragment", "Setting WorkflowState to DETECTING")
         activity?.let {
             workflowModel.setWorkflowState(WorkflowModel.WorkflowState.DETECTING)
         }
@@ -73,13 +74,11 @@ class ProductResultFragment(private val workflowModel: WorkflowModel) : BottomSh
 
     override fun onPause() {
         super.onPause()
-        Log.d("Fragment", "onPause")
     }
 
 
     override fun onDestroyView() {
         super.onDestroyView()
-        Log.d("Fragment", "onDestroyView")
         dismiss()
     }
 

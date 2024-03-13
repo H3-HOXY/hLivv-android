@@ -19,6 +19,9 @@ import org.json.JSONObject
 import java.text.NumberFormat
 import java.util.Locale
 
+/**
+ * @author 반정현
+ */
 object Utils {
     fun Activity.setStatusBarTransparent() {
         window.apply {
@@ -67,7 +70,6 @@ object Utils {
                     showErrorDialog(message, context)
                 }
             } else {
-                Log.d("Coroutine", "Error", e)
                 showErrorDialog(customErrorMessage ?: "잠시 후 다시 시도해주세요.", context)
             }
         } catch (e: JSONException) {
@@ -80,7 +82,6 @@ object Utils {
                 showErrorDialog(customErrorMessage ?: "잠시 후 다시 시도해주세요.", context)
             }
         } catch (e: Exception) {
-            Log.d("Coroutine", "Error", e)
             showErrorDialog(customErrorMessage ?: "잠시 후 다시 시도해주세요.", context)
         }
     }

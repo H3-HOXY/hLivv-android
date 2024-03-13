@@ -5,6 +5,9 @@ import android.animation.ValueAnimator
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator
 import com.hoxy.hlivv.ui.liveqr.barcode.graphic.GraphicOverlay
 
+/**
+ * @author 반정현
+ */
 class CameraReticleAnimator(graphicOverlay: GraphicOverlay) {
 
     /** Returns the scale value of ripple alpha ranges in [0, 1].  */

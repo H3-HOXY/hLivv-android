@@ -2,6 +2,9 @@ package com.hoxy.hlivv.data.infrastructure
 
 typealias MultiValueMap = Map<String, List<String>>
 
+/**
+ * @author 반정현
+ */
 fun collectionDelimiter(collectionFormat: String) = when (collectionFormat) {
     "csv" -> ","
     "tsv" -> "\t"

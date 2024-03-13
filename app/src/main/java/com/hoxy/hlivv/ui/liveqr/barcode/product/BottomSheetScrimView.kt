@@ -12,6 +12,9 @@ import androidx.core.content.ContextCompat
 import com.google.android.gms.common.internal.Preconditions.checkArgument
 import com.hoxy.hlivv.R
 
+/**
+ * @author 반정현
+ */
 class BottomSheetScrimView(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
     private val scrimPaint: Paint

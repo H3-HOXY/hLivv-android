@@ -1,5 +1,8 @@
 package com.hoxy.hlivv.data.infrastructure
 
+/**
+ * @author 반정현
+ */
 enum class ResponseType {
     Success, Informational, Redirection, ClientError, ServerError
 }

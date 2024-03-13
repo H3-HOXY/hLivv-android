@@ -3,10 +3,12 @@ package com.hoxy.hlivv.ui.onboarding
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.hoxy.hlivv.ui.component.BaseFragment
 
+/**
+ * @author 반정현
+ */
 class ViewPagerAdapter(
-    list: ArrayList<BaseFragment>,
+    list: ArrayList<OnboardingStartFragment>,
     fm: FragmentManager,
     lifecycle: Lifecycle
 ) : FragmentStateAdapter(fm, lifecycle) {

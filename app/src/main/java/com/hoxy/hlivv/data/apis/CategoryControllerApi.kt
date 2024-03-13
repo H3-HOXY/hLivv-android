@@ -23,7 +23,9 @@ import com.hoxy.hlivv.data.infrastructure.ServerException
 import com.hoxy.hlivv.data.infrastructure.Success
 import com.hoxy.hlivv.data.models.CategoryDto
 import com.hoxy.hlivv.data.models.ProductDto
-
+/**
+ * @author 반정현
+ */
 class CategoryControllerApi(basePath: String = "https://hlivv.com") :
     ApiClient(basePath) {
 

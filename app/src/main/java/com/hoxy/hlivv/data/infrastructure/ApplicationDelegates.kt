@@ -3,6 +3,9 @@ package com.hoxy.hlivv.data.infrastructure
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
+/**
+ * @author 반정현
+ */
 object ApplicationDelegates {
     /**
      * Provides a property delegate, allowing the property to be set once and only once.

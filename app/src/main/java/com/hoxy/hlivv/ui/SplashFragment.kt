@@ -12,6 +12,9 @@ import com.hoxy.hlivv.R
 import com.hoxy.hlivv.databinding.FragmentSplashBinding
 import com.hoxy.hlivv.ui.component.BaseFragment
 
+/**
+ * @author 반정현
+ */
 class SplashFragment : BaseFragment() {
 
     private var _binding: FragmentSplashBinding? = null

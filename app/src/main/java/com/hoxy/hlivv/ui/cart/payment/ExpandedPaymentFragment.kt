@@ -11,6 +11,9 @@ import com.hoxy.hlivv.databinding.PaymentBottomSheetBinding
 import com.hoxy.hlivv.domain.Utils.setFormattedIntToTextView
 import com.hoxy.hlivv.domain.Utils.setFormattedNumberToTextView
 
+/**
+ * @author 반정현
+ */
 class ExpandedPaymentFragment : Fragment() {
     private var _binding: PaymentBottomSheetBinding? = null
     private val binding get() = _binding!!
@@ -62,7 +65,6 @@ class ExpandedPaymentFragment : Fragment() {
         binding.gotoAr.setOnClickListener {
             // 여기에 currentSelectedItems를 유니티로 전달하는 코드를 작성해주세요
             val currentSelectedItems = viewModel.selectedItems.value
-            Log.d("ClickedItems", currentSelectedItems.toString())
         }
 
 

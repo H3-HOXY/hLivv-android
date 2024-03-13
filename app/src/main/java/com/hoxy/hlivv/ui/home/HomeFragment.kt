@@ -15,6 +15,9 @@ import com.hoxy.hlivv.data.models.LoginDto
 import com.hoxy.hlivv.data.repository.PreferencesRepository
 import com.hoxy.hlivv.databinding.FragmentHomeBinding
 
+/**
+ * @author 반정현
+ */
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
@@ -47,7 +50,6 @@ class HomeFragment : Fragment() {
                 preferencesRepository.saveStringPref(R.string.pref_key_token, "")
                 val token = preferencesRepository.getStringPref(R.string.pref_key_token, "")
                 preferencesRepository.saveLoginInfo(LoginDto("", ""))
-                Log.d("LoginToken", "$token")
                 homeViewModel.checkLogin(
                     preferencesRepository.getStringPref(
                         R.string.pref_key_token,

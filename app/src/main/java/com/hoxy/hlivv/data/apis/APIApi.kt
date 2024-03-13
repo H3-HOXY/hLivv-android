@@ -26,6 +26,9 @@ import com.hoxy.hlivv.data.models.ProductDto
 import com.hoxy.hlivv.data.models.ProductImageDto
 import com.hoxy.hlivv.data.models.RestoreDto
 
+/**
+ * @author 반정현
+ */
 class APIApi(basePath: String = "https://hlivv.com") : ApiClient(basePath) {
 
     /**

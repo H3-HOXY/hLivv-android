@@ -12,6 +12,9 @@ import androidx.core.content.ContextCompat
 import com.hoxy.hlivv.R
 import com.hoxy.hlivv.domain.PreferenceUtils
 
+/**
+ * @author 반정현
+ */
 internal abstract class BarcodeGraphicBase(overlay: GraphicOverlay) :
     GraphicOverlay.Graphic(overlay) {
 

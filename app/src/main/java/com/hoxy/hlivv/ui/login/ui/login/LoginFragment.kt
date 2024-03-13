@@ -17,7 +17,9 @@ import com.hoxy.hlivv.R
 import com.hoxy.hlivv.data.apis.AuthControllerApi
 import com.hoxy.hlivv.databinding.FragmentLoginBinding
 
-
+/**
+ * @author 반정현
+ */
 class LoginFragment : Fragment() {
 
     private lateinit var loginViewModel: LoginViewModel

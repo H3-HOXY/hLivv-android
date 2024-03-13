@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import com.hoxy.hlivv.databinding.FragmentOnboardingSecondBinding
 import com.hoxy.hlivv.ui.component.BaseFragment
 
-
+/**
+ * @author 반정현
+ */
 class OnboardingSecondFragment : BaseFragment() {
     private var _binding: FragmentOnboardingSecondBinding? = null
     private val binding get() = _binding!!

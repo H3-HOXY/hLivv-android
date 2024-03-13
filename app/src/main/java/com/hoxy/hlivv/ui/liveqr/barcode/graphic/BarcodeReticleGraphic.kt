@@ -7,6 +7,9 @@ import androidx.core.content.ContextCompat
 import com.hoxy.hlivv.R
 import com.hoxy.hlivv.ui.liveqr.barcode.animation.CameraReticleAnimator
 
+/**
+ * @author 반정현
+ */
 internal class BarcodeReticleGraphic(
     overlay: GraphicOverlay,
     private val animator: CameraReticleAnimator

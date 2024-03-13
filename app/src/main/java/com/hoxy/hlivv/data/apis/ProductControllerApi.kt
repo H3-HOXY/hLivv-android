@@ -27,6 +27,9 @@ import com.hoxy.hlivv.data.models.Request
 import com.hoxy.hlivv.data.models.Response
 import com.hoxy.hlivv.data.models.ReviewDto
 
+/**
+ * @author 반정현
+ */
 class ProductControllerApi(basePath: String = "https://hlivv.com") : ApiClient(basePath) {
 
     /**

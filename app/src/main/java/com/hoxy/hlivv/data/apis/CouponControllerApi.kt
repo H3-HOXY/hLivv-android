@@ -22,7 +22,9 @@ import com.hoxy.hlivv.data.infrastructure.ServerException
 import com.hoxy.hlivv.data.infrastructure.Success
 import com.hoxy.hlivv.data.models.CouponDto
 import com.hoxy.hlivv.data.models.MemberCouponDto
-
+/**
+ * @author 반정현
+ */
 class CouponControllerApi(basePath: String = "https://hlivv.com") : ApiClient(basePath) {
 
     /**
