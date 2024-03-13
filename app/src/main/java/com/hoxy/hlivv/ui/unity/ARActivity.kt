@@ -21,6 +21,11 @@ import com.unity3d.player.IUnityPlayerLifecycleEvents
 import com.unity3d.player.UnityPlayer
 
 
+/**
+ * 라이브러리 형태의 유니티를 엑티비티 형태로 불러옵니다.
+ * 상호 작용을 적용합니다.
+ * @author 이호연
+ */
 class ARActivity : AppCompatActivity(), UnityFragment.Companion.OnUnityFragmentReady,
     IUnityPlayerLifecycleEvents {
     private lateinit var _binding: ActivityUnityBinding

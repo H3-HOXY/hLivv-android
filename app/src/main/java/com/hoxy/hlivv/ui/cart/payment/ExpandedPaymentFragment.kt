@@ -13,6 +13,9 @@ import com.hoxy.hlivv.domain.Utils.setFormattedIntToTextView
 import com.hoxy.hlivv.domain.Utils.setFormattedNumberToTextView
 import com.hoxy.hlivv.ui.unity.ARActivity
 
+/**
+ * @author 반정현, 이호연(유니티로 넘기기)
+ */
 class ExpandedPaymentFragment : Fragment() {
     private var _binding: PaymentBottomSheetBinding? = null
     private val binding get() = _binding!!
