@@ -5,11 +5,31 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+def getUnityDir() {
+    Properties local = new Properties()
+    try {
+        local.load(new FileInputStream("${rootDir}/local.properties"))
+    } catch (IOException e) {
+        println "Error loading local.properties: ${e.message}"
+        return ""
+    }
+    return local.getProperty('unityProject.dir')
+}
+
+include ':unityLibrary'
+project(':unityLibrary').projectDir = new File(getUnityDir(), '/unityLibrary')
+
+include ":xrmanifest.androidlib"
+project(":xrmanifest.androidlib").projectDir = new File(getUnityDir(), '/unityLibrary/xrmanifest.androidlib')
+
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
+        flatDir{
+            dirs "${project(':unityLibrary').projectDir}/libs"
+        }
     }
 }
 
